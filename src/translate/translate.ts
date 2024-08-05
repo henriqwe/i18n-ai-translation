@@ -2,7 +2,6 @@ import { addedDiff, deletedDiff } from 'deep-object-diff';
 import fs from 'fs';
 import { globSync } from 'glob';
 import extend from 'just-extend';
-import path from 'path';
 import { argv } from './cli';
 import { JSONObj } from './payload';
 import { replaceAll } from './util';
@@ -27,7 +26,7 @@ export abstract class Translate {
 
   private translateFiles = (dirPath: string): void => {
     console.log('Finding files for translation...');
-    const filePaths: string[] = globSync(`${dirPath}/**/${argv.from}.json`, {
+    const filePaths: string[] = globSync(`${dirPath}/translations.json`, {
       ignore: [`${dirPath}/**/node_modules/**`, `${dirPath}/**/dist/**`],
     });
     if (filePaths.length === 0) throw new Error(`0 files found for translation in ${dirPath}`);
@@ -38,10 +37,7 @@ export abstract class Translate {
   private translateFile = (filePath: string): void => {
     try {
       const fileForTranslation = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as JSONObj;
-      const saveTo: string = path.join(
-        filePath.substring(0, filePath.lastIndexOf('/')),
-        `${argv.to}.json`,
-      );
+      const saveTo: string = filePath.replace(argv.from, argv.to);
       if (argv.override || !fs.existsSync(saveTo))
         this.translationDoesNotExists(fileForTranslation, saveTo);
       else this.translationAlreadyExists(fileForTranslation, saveTo);
@@ -170,7 +166,7 @@ export abstract class Translate {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private printError = (error: any, saveTo: string): void => {
-    const errorFilePath = saveTo.replace(`${argv.to}.json`, `${argv.from}.json`);
+    const errorFilePath = saveTo.replace(argv.to, argv.from);
     console.error(`Request error for file: ${errorFilePath}`);
     console.log(`Status Code: ${error?.response?.status ?? error?.response?.statusCode}`);
     console.log(`Status Text: ${error?.response?.statusText ?? error?.response?.statusMessage}`);
@@ -218,6 +214,10 @@ export abstract class Translate {
 
   private writeToFile = (content: JSONObj, saveTo: string, message: string): void => {
     try {
+      const saveToDir = saveTo.replace('/translations.json', '');
+      if (!fs.existsSync(saveToDir)) {
+        fs.mkdirSync(saveToDir, { recursive: true });
+      }
       fs.writeFileSync(saveTo, JSON.stringify(content, null, argv.spaces));
       console.log(message);
     } catch (e) {

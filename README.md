@@ -17,14 +17,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/while1618/i18n-auto-translation/actions/workflows/build.yml" alt="Build">
-    <img src="https://github.com/while1618/i18n-auto-translation/actions/workflows/build.yml/badge.svg" />
+  <a href="https://github.com/henriqwe/i18n-auto-translation/actions/workflows/build.yml" alt="Build">
+    <img src="https://github.com/henriqwe/i18n-auto-translation/actions/workflows/build.yml/badge.svg" />
   </a>
   <a href="https://www.npmjs.com/package/i18n-auto-translation" alt="NPM Version">
     <img src="https://img.shields.io/badge/npm-v1.6.2-blue" />
   </a>
   <a href="LICENSE" alt="License">
-    <img src="https://img.shields.io/github/license/while1618/i18n-auto-translation" />
+    <img src="https://img.shields.io/github/license/henriqwe/i18n-auto-translation" />
   </a>
 </p>
   

@@ -1,11 +1,15 @@
 {
-  "name": "i18n-auto-translation",
-  "version": "1.6.2",
+  "name": "i18n-ai-translation",
+  "version": "1.6.3",
   "description": "Auto translate i18n JSON file(s) to desired language(s).",
   "main": "dist/index.js",
   "license": "MIT",
-  "homepage": "https://github.com/while1618/i18n-auto-translation",
+  "homepage": "https://github.com/henriqwe/i18n-ai-translation",
   "bin": "dist/index.js",
+  "author": {
+    "name": "Henrique",
+    "email": "henriqwe96@gmail.com"
+  },
   "files": [
     "dist"
   ],
@@ -27,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/while1618/i18n-auto-translation.git"
+    "url": "https://github.com/henriqwe/i18n-ai-translation.git"
   },
   "engines": {
     "node": ">= 14.17"

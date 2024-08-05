@@ -1,6 +1,6 @@
 {
   "name": "i18n-ai-translation",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Auto translate i18n JSON file(s) to desired language(s).",
   "main": "dist/index.js",
   "license": "MIT",

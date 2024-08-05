@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  i18n-auto-translation
+  i18n-ai-translation
   <br>
 </h1>
 
@@ -17,20 +17,20 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/henriqwe/i18n-auto-translation/actions/workflows/build.yml" alt="Build">
-    <img src="https://github.com/henriqwe/i18n-auto-translation/actions/workflows/build.yml/badge.svg" />
+  <a href="https://github.com/henriqwe/i18n-ai-translation/actions/workflows/build.yml" alt="Build">
+    <img src="https://github.com/henriqwe/i18n-ai-translation/actions/workflows/build.yml/badge.svg" />
   </a>
-  <a href="https://www.npmjs.com/package/i18n-auto-translation" alt="NPM Version">
+  <a href="https://www.npmjs.com/package/i18n-ai-translation" alt="NPM Version">
     <img src="https://img.shields.io/badge/npm-v1.6.2-blue" />
   </a>
   <a href="LICENSE" alt="License">
-    <img src="https://img.shields.io/github/license/henriqwe/i18n-auto-translation" />
+    <img src="https://img.shields.io/github/license/henriqwe/i18n-ai-translation" />
   </a>
 </p>
   
 ## Description
 
-i18n-auto-translation helps you translate your JSON internationalization files. You need to pick one of the translation API providers that are supported, pass the subscription key, language to which you want to translate, path to the file or directory, and you are good to go.
+i18n-ai-translation helps you translate your JSON internationalization files. You need to pick one of the translation API providers that are supported, pass the subscription key, language to which you want to translate, path to the file or directory, and you are good to go.
 
 ### How It Works?
 
@@ -48,19 +48,19 @@ i18n-auto-translation helps you translate your JSON internationalization files. 
 You can install package globally on your machine:
 
 ```bash
-$ npm i -g i18n-auto-translation
+$ npm i -g i18n-ai-translation
 ```
 
 Or save it as dev dependency in your project:
 
 ```bash
-$ npm i -D i18n-auto-translation
+$ npm i -D i18n-ai-translation
 ```
 
 ## Usage
 
 ```bash
-$ i18n-auto-translation -k SUBSCRIPTION_KEY -d PROJECT_DIR -t DESIRED_LANGUAGE
+$ i18n-ai-translation -k SUBSCRIPTION_KEY -d PROJECT_DIR -t DESIRED_LANGUAGE
 ```
 
 ### Options
